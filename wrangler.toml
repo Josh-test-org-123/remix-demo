@@ -1,5 +1,5 @@
 name = "pages-remix-demo"
-pages_build_output_dir = "./dist"
+pages_build_output_dir = "./build/client"
 
 [vars]
 API_KEY = "1234567asdf"
