@@ -1,5 +1,6 @@
 name = "remix-demo"
-pages_build_output_dir = "./build/client"
+main = "build/server/index.js"
+compatibility_date = "2024-03-20"
 
-[vars]
-API_KEY = "1234567asdf"
+[assets]
+directory = "./build/client"
