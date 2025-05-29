@@ -1,4 +1,4 @@
-name = "pages-remix-demo"
+name = "remix-demo"
 pages_build_output_dir = "./build/client"
 
 [vars]
