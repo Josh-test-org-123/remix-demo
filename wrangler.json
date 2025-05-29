@@ -1,0 +1,11 @@
+{
+  "name": "pages-remix-demo",
+  "main": "./build/server/index.js",
+  "compatibility_date": "2025-05-29",
+  "assets": {
+    "directory": "./build/client"
+  },
+  "vars": {
+    "API_KEY": "1234567asdf"
+  }
+}
