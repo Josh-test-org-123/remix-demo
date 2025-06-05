@@ -1,0 +1,35 @@
+{
+  "name": "remix-demo",
+  // It's a good practice to set a compatibility_date.
+  // This ensures that your Worker runs with a consistent set of Workers runtime features.
+  // Update this date to the latest when you want to adopt new features or breaking changes.
+  "compatibility_date": "2025-05-29",
+  // The 'main' field should point to the entry point of your Worker.
+  // Since this project uses a functions/ directory (typical of Pages Functions),
+  // we'll compile them into a single Worker script.
+  "main": "./dist/worker/index.js",
+  // The 'assets' configuration tells Wrangler where to find your static files.
+  // This was previously 'pages_build_output_dir' in wrangler.toml.
+  "assets": {
+    "directory": "./build/client"
+    // You can include or exclude specific files/directories from being uploaded as static assets.
+    // For example, if your build process for client assets creates a _worker.js file
+    // that is NOT meant to be a static asset, you should ignore it.
+    // "ignore": ["_worker.js"] // Example: uncomment and adjust if needed
+  },
+  // Environment variables for your Worker.
+  // These were previously under [vars] in wrangler.toml.
+  "vars": {
+    "API_KEY": "1234567asdf"
+  }
+  // If your Worker needs bindings to KV namespaces, D1 databases, R2 buckets, etc.,
+  // you would define them here. For example:
+  // "kv_namespaces": [
+  //   { "binding": "MY_KV_NAMESPACE", "id": "your-kv-namespace-id", "preview_id": "your-preview-kv-namespace-id" }
+  // ],
+  // "d1_databases": [
+  //   { "binding": "DB", "database_name": "my-database", "database_id": "your-d1-database-id", "preview_database_id": "your-preview-d1-database-id" }
+  // ]
+  // Only add bindings if your code explicitly uses them and the build fails without them.
+  // Placeholder IDs will cause deployment errors.
+}
