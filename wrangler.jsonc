@@ -1,0 +1,12 @@
+{
+  "name": "remix-demo",
+  "main": "./build/server/index.js",
+  "assets": {
+    "directory": "./build/client"
+  },
+  "vars": {
+    "API_KEY": "1234567asdf"
+  },
+  // Ensure this date is updated to a recent one for production deployments
+  "compatibility_date": "2024-05-30"
+}
