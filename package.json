@@ -5,13 +5,15 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "build": "remix vite:build",
-    "dev": "remix vite:dev",
+    "build:remix": "remix vite:build",
+    "build:worker": "wrangler pages functions build --plugin ./functions/[[path]].ts --outdir=./build/worker --sourcemap",
+    "build": "npm run build:remix && npm run build:worker",
+    "dev": "wrangler dev",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
-    "start": "wrangler pages dev ./build/client",
+    "start": "wrangler dev",
     "typecheck": "tsc",
-    "preview": "wrangler pages dev ./build/client",
-    "deploy": "npm run build && wrangler pages deploy ./build/client"
+    "preview": "wrangler dev",
+    "deploy": "npm run build && cp .assetsignore ./build/client/ && npx wrangler deploy"
   },
   "dependencies": {
     "@remix-run/cloudflare": "^2.4.1",
